@@ -62,6 +62,7 @@ class ListViewController: UIViewController {
     }
     
     private func reloadData() {
+        
         var snapShot = NSDiffableDataSourceSnapshot<Section, MChat>()
         
         snapShot.appendSections([.waitingChats, .activeChats])
@@ -178,7 +179,7 @@ extension ListViewController {
 // MARK: - UISearchBarDelegate
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        reloadData()
     }
 }
 

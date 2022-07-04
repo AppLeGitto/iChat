@@ -56,11 +56,19 @@ class PeopleViewController: UIViewController {
         searchController.searchBar.delegate = self
     }
     
-    private func reloadData() {
+    private func reloadData(with searchText: String? = nil) {
+        
+        let filteredUsers: [MUser]
+        
+        if let searchText = searchText, searchText != "" {
+            filteredUsers = users.filter { $0.username.lowercased().contains(searchText.lowercased()) }
+        } else {
+            filteredUsers = users
+        }
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, MUser>()
         snapshot.appendSections([.users])
-        snapshot.appendItems(users, toSection: .users)
+        snapshot.appendItems(filteredUsers, toSection: .users)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
@@ -151,7 +159,7 @@ extension PeopleViewController {
 // MARK: - UISearchBarDelegate
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        reloadData(with: searchText)
     }
 }
 
