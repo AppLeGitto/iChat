@@ -18,6 +18,8 @@
 		4D3EF0BB287307D300EE70AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4D3EF0BA287307D300EE70AD /* FirebaseAuth */; };
 		4D3EF0BD2873110C00EE70AD /* VCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF0BC2873110C00EE70AD /* VCFactory.swift */; };
 		4D3EF0C02873132B00EE70AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF0BF2873132B00EE70AD /* AuthService.swift */; };
+		4D3EF0C22873266C00EE70AD /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF0C12873266C00EE70AD /* Validators.swift */; };
+		4D3EF0C428732A7900EE70AD /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF0C328732A7900EE70AD /* AuthError.swift */; };
 		4D5E9BB2285E265100A52A87 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E9BB1285E265100A52A87 /* SignUpViewController.swift */; };
 		4D5E9BB4285E2AB200A52A87 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E9BB3285E2AB200A52A87 /* OneLineTextField.swift */; };
 		4D82CC45286B0C18007DFC27 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CC44286B0C18007DFC27 /* ActiveChatCell.swift */; };
@@ -82,6 +84,8 @@
 		4D3EF0B52872FD6A00EE70AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D3EF0BC2873110C00EE70AD /* VCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCFactory.swift; sourceTree = "<group>"; };
 		4D3EF0BF2873132B00EE70AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4D3EF0C12873266C00EE70AD /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		4D3EF0C328732A7900EE70AD /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		4D5E9BB1285E265100A52A87 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4D5E9BB3285E2AB200A52A87 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		4D82CC44286B0C18007DFC27 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4D3EF0C52873344000EE70AD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4D3EF0C328732A7900EE70AD /* AuthError.swift */,
+				4D3EF0C12873266C00EE70AD /* Validators.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4D82CC43286B0C03007DFC27 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 				4DA26B122864A40D00BD5F02 /* SignIn&Auth */,
 				4D82CC4C286B3818007DFC27 /* Protocols */,
 				4DEAEC34285CC403005A6D96 /* Extensions */,
+				4D3EF0C52873344000EE70AD /* Helpers */,
 				4DEAEC04285CAD9B005A6D96 /* LaunchScreen.storyboard */,
 				4DF09D2C28660BCE00707255 /* activeChats.json */,
 				4DF09D2D28660BCE00707255 /* waitingChats.json */,
@@ -449,6 +463,7 @@
 				4DA26B1128649BD300BD5F02 /* UISegmentedControl + Extension.swift in Sources */,
 				4DEAEC2C285CB960005A6D96 /* UIFont + Extension.swift in Sources */,
 				4D18D813286B67D60094270A /* MUser.swift in Sources */,
+				4D3EF0C22873266C00EE70AD /* Validators.swift in Sources */,
 				4D82CC45286B0C18007DFC27 /* ActiveChatCell.swift in Sources */,
 				4DEAEBFE285CAD99005A6D96 /* AuthViewController.swift in Sources */,
 				4DA26B172864A59A00BD5F02 /* PeopleViewController.swift in Sources */,
@@ -469,6 +484,7 @@
 				4D023EC0286C9E06009D19ED /* UserCell.swift in Sources */,
 				4D023EC2286C9FD0009D19ED /* UIViewController + Extension.swift in Sources */,
 				4D3EF0C02873132B00EE70AD /* AuthService.swift in Sources */,
+				4D3EF0C428732A7900EE70AD /* AuthError.swift in Sources */,
 				4D82CC4B286B37DE007DFC27 /* SelfConfiguringCell.swift in Sources */,
 				4D82CC49286B3678007DFC27 /* WaitingChatCell.swift in Sources */,
 				4DEAEC38285CD35B005A6D96 /* UIStackView + Extension.swift in Sources */,
