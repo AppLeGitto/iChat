@@ -70,21 +70,21 @@ extension ProfileViewController {
         ])
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 30),
-            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 30),
-            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
+            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 35),
+            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
         ])
         
         NSLayoutConstraint.activate([
-            aboutMeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            aboutMeLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 30),
-            aboutMeLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30)
+            aboutMeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            aboutMeLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            aboutMeLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24)
         ])
         
         NSLayoutConstraint.activate([
-            myTextField.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 12),
-            myTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 30),
-            myTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
+            myTextField.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 24),
+            myTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            myTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             myTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
