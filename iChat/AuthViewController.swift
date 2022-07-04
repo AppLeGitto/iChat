@@ -28,6 +28,18 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .mainWhite()
         
         setupConstraints()
+        
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func emailButtonTapped() {
+        
+        present(VCFactory.getVC(vc: .SignUpVC), animated: true)
+    }
+    
+    @objc private func loginButtonTapped() {
+        present(VCFactory.getVC(vc: .LoginVC), animated: true)
     }
 }
 

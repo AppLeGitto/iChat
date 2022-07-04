@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     let googleButton = UIButton(title: "Google", titleColor: .buttonDark(), backgroundColor: .white, isShadow: true)
     let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
-    let signInButton: UIButton = {
+    let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.buttonRed(), for: .normal)
@@ -39,9 +39,23 @@ class LoginViewController: UIViewController {
         
         view.backgroundColor = .mainWhite()
         setupConstraints()
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
-    
+    @objc private func loginButtonTapped() {
+        AuthService.shared.login(email: emailTextField.text!,
+                                 password: passwordTextField.text!) { (result) in
+            switch result {
+            case .success(let user):
+                self.showAlert(with: "Успешно!", and: "Вы вошли в аккаунт!")
+                return
+            case .failure(let error):
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+                return
+            }
+        }
+    }
 }
 
 // MARK: - Extension LoginViewController
@@ -59,7 +73,7 @@ extension LoginViewController {
         
         let stackView = UIStackView(arrangedSubviews: [loginWithView, orLabel, emailStackView, passwordStackView, loginButton], axis: .vertical, spacing: 40)
         
-        let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, signInButton], axis: .horizontal, spacing: 10)
+        let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel, signUpButton], axis: .horizontal, spacing: 10)
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
