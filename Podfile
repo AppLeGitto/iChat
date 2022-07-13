@@ -6,8 +6,7 @@ target 'iChat' do
   use_frameworks!
 
   # Pods for iChat
-pod 'Firebase/Analytics'
-pod 'Firebase/Auth'
+pod 'FirebaseFirestore'
 
   target 'iChatTests' do
     inherit! :search_paths

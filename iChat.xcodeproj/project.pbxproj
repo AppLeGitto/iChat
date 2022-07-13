@@ -55,6 +55,7 @@
 		4DF09D2B2865FDB400707255 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF09D2A2865FDB400707255 /* Bundle-Decodable.swift */; };
 		4DF09D2E28660BCE00707255 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DF09D2C28660BCE00707255 /* activeChats.json */; };
 		4DF09D2F28660BCE00707255 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DF09D2D28660BCE00707255 /* waitingChats.json */; };
+		4DF9877F287EDBA300BA1953 /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9877E287EDBA300BA1953 /* AuthNavigationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		4DF09D2A2865FDB400707255 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		4DF09D2C28660BCE00707255 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		4DF09D2D28660BCE00707255 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		4DF9877E287EDBA300BA1953 /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4D82CC4A286B37DE007DFC27 /* SelfConfiguringCell.swift */,
+				4DF9877E287EDBA300BA1953 /* AuthNavigationDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -303,10 +306,10 @@
 		4DEAEC34285CC403005A6D96 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4DEAEC33285CC3E5005A6D96 /* UIKit */,
 				4D5E9BB3285E2AB200A52A87 /* OneLineTextField.swift */,
 				4DEAEC35285CC5AC005A6D96 /* ButtonFormView.swift */,
 				4DA26B0E28647CB600BD5F02 /* AddPhotoView.swift */,
-				4DEAEC33285CC3E5005A6D96 /* UIKit */,
 				4DF09D2A2865FDB400707255 /* Bundle-Decodable.swift */,
 				4D82CC46286B1D29007DFC27 /* GradientView.swift */,
 				4DC511D2286DF0F6007E5BAC /* InsetableTextField.swift */,
@@ -490,6 +493,7 @@
 				4DEAEC38285CD35B005A6D96 /* UIStackView + Extension.swift in Sources */,
 				4DEAEBFC285CAD99005A6D96 /* SceneDelegate.swift in Sources */,
 				4D189C4F2860A2280076E840 /* LoginViewController.swift in Sources */,
+				4DF9877F287EDBA300BA1953 /* AuthNavigationDelegate.swift in Sources */,
 				4DEAEC2A285CB711005A6D96 /* UIButton + Extension.swift in Sources */,
 				4DA26B142864A48F00BD5F02 /* MainTabBarController.swift in Sources */,
 			);

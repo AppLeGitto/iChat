@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     let confirmPasswordTextField = OneLineTextField(font: .avenir20())
     
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonDark(), isShadow: false)
-    let alreadyOnBoardButton: UIButton = {
+    let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.buttonRed(), for: .normal)
@@ -30,6 +30,8 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +39,7 @@ class SignUpViewController: UIViewController {
         setupConstraints()
         
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     @objc private func signUpButtonTapped() {
@@ -45,10 +48,18 @@ class SignUpViewController: UIViewController {
                                     confirmPassword: confirmPasswordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(with: "Успешно!", and: "Вы зарегистрированны")
+                self.showAlert(with: "Успешно!", and: "Вы зарегистрированны") {
+                    self.present(SetupProfileViewController(), animated: true)
+                }
             case .failure(let error):
                 self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
+        }
+    }
+    
+    @objc private func loginButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
         }
     }
 }
@@ -68,7 +79,7 @@ extension SignUpViewController {
                                     axis: .vertical,
                                     spacing: 40)
         
-        let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnBoardLabel, alreadyOnBoardButton], axis: .horizontal, spacing: 10)
+        let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnBoardLabel, loginButton], axis: .horizontal, spacing: 10)
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -110,9 +121,11 @@ struct SignUpViewControllerProvider: PreviewProvider {
 }
 
 extension UIViewController {
-    func showAlert(with title: String, and message: String) {
+    func showAlert(with title: String, and message: String, completion: @escaping () -> () = {} ) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            completion()
+        }
         alertController.addAction(okAction)
         
         present(alertController, animated: true)

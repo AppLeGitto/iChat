@@ -18,6 +18,9 @@ class AuthViewController: UIViewController {
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .black, isShadow: false)
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, isShadow: true)
     let googleButton = UIButton(title: "Google", titleColor: .buttonDark(), backgroundColor: .white, isShadow: true)
+    
+    let loginVC = LoginViewController()
+    let sigUpVC = SignUpViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +34,17 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        loginVC.delegate = self
+        sigUpVC.delegate = self
     }
     
     @objc private func emailButtonTapped() {
-        
-        present(VCFactory.getVC(vc: .SignUpVC), animated: true)
+        present(sigUpVC, animated: true)
     }
     
     @objc private func loginButtonTapped() {
-        present(VCFactory.getVC(vc: .LoginVC), animated: true)
+        present(loginVC, animated: true)
     }
 }
 
@@ -66,6 +71,16 @@ extension AuthViewController {
         stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 100).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+    }
+}
+
+extension AuthViewController: AuthNavigationDelegate {
+    func toLoginVC() {
+        present(loginVC, animated: true)
+    }
+    
+    func toSignUpVC() {
+        present(sigUpVC, animated: true)
     }
 }
 
